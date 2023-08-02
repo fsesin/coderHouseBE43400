@@ -1,0 +1,9 @@
+
+{{#if users.length}}
+{{#each users}}
+<h2>Bienvenido {{nombre}} {{apellido}}</h2>
+<p>Hola {{email}}</p>
+{{/each}}
+{{else}}
+<h2>NO HAY USUARIOS REGISTRADOS</h2>
+{{/if}}
