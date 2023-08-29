@@ -6,8 +6,7 @@ const router = Router()
 
 router.get('/', async (req, res) => {
   try {
-    const {limit=10,page=1} = req.query
-    const users = await usersMongo.findAll(limit,page)
+    const users = await usersMongo.findAll(req.query)
     // if (users.length) {
     //   res.status(200).json({ message: 'Users', users })
     // } else {

@@ -21,7 +21,7 @@ class CoursesMongo {
 
   async findById(id) {
     try {
-      const course = await coursesModel.findById(id).populate('students',['first_name','last_name'])
+      const course = await coursesModel.findById(id).populate('students')
       return course
     } catch (error) {
       return error
@@ -41,6 +41,21 @@ class CoursesMongo {
     try {
       const response = await coursesModel.findByIdAndDelete(id)
       return response
+    } catch (error) {
+      return error
+    }
+  }
+
+  async deleteStudent(idCourse,idStudent){
+    try {
+        const course = await coursesModel.findById(idCourse)
+        if(!course) throw new Error('Course not found')
+        
+        const response = await coursesModel.updateOne({_id:idCourse},{$pull:{students:idStudent}})
+      return response
+
+
+
     } catch (error) {
       return error
     }

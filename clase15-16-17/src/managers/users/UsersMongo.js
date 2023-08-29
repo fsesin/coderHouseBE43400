@@ -13,23 +13,26 @@ class UsersMongo {
 
   // paginate
 
-  async findAll(limit,page) {
+  async findAll(obj) {
+    const {limit,page,sortFirstName,...query} = obj
+    console.log(query);
     try {
       const result = await usersModel.paginate(
-        { gender: 'Male' },
-        { limit,page }
+        query,
+        { limit,page,sort:{first_name:sortFirstName}}
       )
       const info = {
         count: result.totalDocs,
-        pages: result.totalPages,
-        next: result.hasNextPage
+        payload: result.docs,
+        totalPages: result.totalPages,
+        nextLink: result.hasNextPage
           ? `http://localhost:8080/api/users?page=${result.nextPage}`
           : null,
-        prev: result.hasPrevPage
+        prevLink: result.hasPrevPage
           ? `http://localhost:8080/api/users?page=${result.prevPage}`
           : null,
       }
-      return { info, results: result.docs }
+      return info
     } catch (error) {
       return error
     }
