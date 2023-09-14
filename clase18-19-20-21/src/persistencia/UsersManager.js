@@ -19,6 +19,14 @@ class UsersManager {
             return error
         }
     }
+    async findUserById(id){
+        try {
+            const user = await usersModel.findById(id)
+            return user
+        } catch (error) {
+            return error
+        }
+    }
 }
 
 export const usersManager = new UsersManager()
