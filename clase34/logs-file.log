@@ -1,0 +1,40 @@
+{"level":"info","message":"Escuchando al puerto prueba 8080"}
+{"level":"info","message":"Escuchando al puerto prueba 8080"}
+{"level":"error","message":"Error"}
+{"level":"info","message":"Info"}
+{"level":"info","message":"Escuchando al puerto prueba 8080"}
+{"level":"error","message":"Error"}
+{"level":"warn","message":"Warn"}
+{"level":"info","message":"Info"}
+{"level":"error","message":"Error"}
+{"level":"warn","message":"Warn"}
+{
+  message: 'Error',
+  level: 'error',
+  timestamp: '2023-10-25T00:31:28.892Z'
+}
+{
+  message: 'Warn',
+  level: 'warn',
+  timestamp: '2023-10-25T00:31:28.894Z'
+}
+{
+  message: 'Error',
+  level: 'error',
+  timestamp: '2023-10-25T00:48:42.965Z'
+}
+{
+  message: 'Warn',
+  level: 'warn',
+  timestamp: '2023-10-25T00:48:42.967Z'
+}
+{
+  message: 'Info',
+  level: 'info',
+  timestamp: '2023-10-25T00:48:42.967Z'
+}
+{
+  message: '/test endpoint',
+  level: 'info',
+  timestamp: '2023-10-25T00:48:52.617Z'
+}
